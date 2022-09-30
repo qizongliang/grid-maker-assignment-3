@@ -22,7 +22,16 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    numCols++;
+    var table = document.getElementById('grid'); // table reference
+
+    var div = document.createElement('div'), // create DIV element
+        txt = document.createTextNode(" "); // create text node
+    div.appendChild(txt);                    // append text node to the DIV
+    
+    for (i = 0; i < numCols; i++) {
+        table.rows[i].insertCell(numCols-1).appendChild(div);// append DIV to the table cell
+    };
 }
 
 // Remove a row
