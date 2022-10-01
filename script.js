@@ -5,12 +5,41 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let table = document.getElementById('grid'); // table reference
+    var row = table.insertRow(0); // insert a row into the html
+    numRows++; // add 1 to the global variable numRows
+    if(numCols == 0){ // if Column is zero then add a new cell at 0 and add 1 to the global variable numCols
+        var cell = row.insertCell(0);
+        numCols++;
+    }else{
+        for(var i = 0; i <numCols; i++){ // for however many column in the table
+            var cell = row.insertCell(i); // add as many column we have in the table
+        }
+    }
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    
+    var table = document.getElementById('grid'); // table reference
+
+    if(numCols == 0){ // if no column exist yet
+        var row = table.insertRow(0); // create a new row
+        row.insertCell(0); // insert a new cell into the row
+        numRows++; // update both globalnumber
+        numCols++;
+    }else{
+        numCols++; // add 1 to column
+        for(i = 0; i < table.rows.length; i++){ // for all the rows
+            for(j = table.rows[i].cells.length; j < numCols;j++){ // add a cell at 0 place if the number of cell doesn't match the total column
+                table.rows[i].insertCell(0);
+            }
+        }
+    }
+    
+}
+function createCell(cell, text, style) {
+    
 }
 
 // Remove a row
