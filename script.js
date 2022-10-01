@@ -38,13 +38,16 @@ function addC() {
     }
     
 }
-function createCell(cell, text, style) {
-    
-}
-
 // Remove a row
+// let numRows = 0;
+// let numCols = 0;
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if(numRows == 0){
+        alert("No Rows to Remove");
+    }else{
+        
+        document.getElementById("grid").deleteRow(--numRows);
+    }
 }
 
 // Remove a column
