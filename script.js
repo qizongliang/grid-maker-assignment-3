@@ -52,7 +52,15 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if(numCols == 0){
+        alert("No Column to Remove");
+    }else{
+        var table = document.getElementById('grid'); // table reference
+        numCols--; // add 1 to column
+        for(i = 0; i < numRows; i++){ // for all the rows
+            table.rows[i].deleteCell(-1);
+        }
+    }
 }
 
 // Set global variable for selected color
