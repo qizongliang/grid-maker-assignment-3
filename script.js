@@ -2,8 +2,6 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected;
-let colorPrevious;
-
 // Add a row
 function addR() {
     let table = document.getElementById('grid'); // table reference
@@ -77,7 +75,19 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    var table = document.getElementById('grid'); // table reference
+    if(numCols == 0 || numRows == 0){ // if no column exist yet
+        alert("nothing exist to fill")
+    }else{
+
+        for(i = 0; i < numRows; i++){
+            for(j = 0; j < numCols;j++){
+                if(table.rows[i].cells[j].className == '' ){ // if no color exist then
+                    table.rows[i].cells[j].classList.add(colorSelected); // add the current selected color to the table cells
+                }
+            }
+        }
+    }
 }
 
 // Fill all cells
@@ -91,7 +101,7 @@ function fillAll(){
 
         for(i = 0; i < numRows; i++){ // remove all the previous color from the class list
             for(j = 0; j < numCols;j++){
-                table.rows[i].cells[j].classList.remove(colorPrevious);
+                table.rows[i].cells[j].className = '';
             }
         }
 
@@ -100,7 +110,7 @@ function fillAll(){
                 table.rows[i].cells[j].classList.add(colorSelected); // add the current selected color to the table cells
             }
         }
-        colorPrevious = document.getElementById("selectedColorId").value; // set the previous value of the color
+        
     }
 }
 
