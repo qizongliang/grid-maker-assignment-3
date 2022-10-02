@@ -1,2 +1,4 @@
 # grid-maker-starter-code
-Starter code for Assignment 3 - Grid Maker.
+
+This assignment is done by QIZONG LIANG
+Author @qizong liang
