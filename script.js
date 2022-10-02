@@ -116,5 +116,15 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    if(numCols == 0 || numRows == 0){ // if no column exist yet
+        alert("nothing exist to fill")
+    }else{
+
+        for(i = 0; i < numRows; i++){ // remove all the previous color from the class list
+            for(j = 0; j < numCols;j++){
+                table.rows[i].cells[j].className = '';
+            }
+        }
+    }
+
 }
