@@ -43,22 +43,27 @@ function addC() {
 // let numCols = 0;
 function removeR() {
     if(numRows == 0){
-        alert("No Rows to Remove");
+        alert("No Rows to Remove"); // if no row exist, can't remove row
     }else{
-        
-        document.getElementById("grid").deleteRow(--numRows);
+        document.getElementById("grid").deleteRow(--numRows); // Get the grid element then delete the row. Also modifying the numRows.
+        if(numRows == 0){ //if we reach zero rows. 
+            numCols = 0; // SET numof Columns to zero
+        }
     }
 }
 
 // Remove a column
 function removeC() {
-    if(numCols == 0){
+    if(numCols == 0){ // if no column exist, can't remove
         alert("No Column to Remove");
     }else{
         var table = document.getElementById('grid'); // table reference
         numCols--; // add 1 to column
         for(i = 0; i < numRows; i++){ // for all the rows
             table.rows[i].deleteCell(-1);
+        }
+        if(numCols == 0){ // if we reach zero column
+            numRows = 0;// set numRows to zero
         }
     }
 }
