@@ -7,3 +7,27 @@ td{
     width: 50px;
     background-color: white;
 }
+
+.Red{
+    border-color: black;
+    background-color: red;
+    color:white;
+}
+
+.Blue{
+    border-color: black;
+    background-color: blue;
+    color:white;
+}
+
+.Green{
+    border-color: black;
+    background-color:green;
+    color:white;
+}
+
+.Yellow{
+    border-color: black;
+    background-color: yellow;
+    color:white;
+}
