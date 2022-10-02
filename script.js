@@ -116,6 +116,7 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
+    var table = document.getElementById('grid'); // table reference
     if(numCols == 0 || numRows == 0){ // if no column exist yet
         alert("nothing exist to fill")
     }else{
